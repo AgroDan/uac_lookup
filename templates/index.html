@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.87.0">
+    <title>Signin Template · Bootstrap v5.1</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/formfill.css') }}" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form method="POST">
+    <h1 class="h3 mb-3 fw-normal">Enter UAC #</h1>
+
+    <div class="form-floating">
+      <input type="text" name="uacnum" class="form-control" id="floatingInput" placeholder="2097152">
+      <label for="floatingInput">UserAccountControl Value</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+  </form>
+    {% if return_val %}
+    <br />
+    <div class="container">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item active" aria-current="true">{{ init_val }}</li>
+        {% for val in return_val %}
+            <li class="list-group-item">{{ val }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</main>
+
+
+    
+  </body>
+</html>
