@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-import sys
-
 uacTable = { 1: "SCRIPT",
              2: "ACCOUNTDISABLE",
              8: "HOMEDIR_REQUIRED",
